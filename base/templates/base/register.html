@@ -1,0 +1,29 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <h1>Register</h1>
+</div>
+
+<div class="card-body">
+<form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="username"><b>Username</b></label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Create a username">
+    </div>
+    <div class="form-group">
+        <label for="password1"><b>Password</b></label>
+        <input type="password" class="form-control" id="password1" name="password1" placeholder="Create new password">
+    </div>
+    <div class="form-group">
+        <label for="password2"><b>Confirm Password</b></label>
+        <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm your password">
+    </div>
+    <button style="margin-top: 10px; ;" class="button" type="submit" class="btn btn-primary">Register</button>
+</form>
+
+<p><b>Already have an account? <a href="{% url 'login' %}">Login</a></b></p>
+
+</div>
+{% endblock content %}
