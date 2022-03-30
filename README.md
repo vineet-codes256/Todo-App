@@ -1,5 +1,6 @@
 # Todo-App
 This is a production level responsive Todo-App built on Python-Django framework and deployed on Heroku.
+App with CRUD operations
 
 https://tasks-todo-app.herokuapp.com/
 ![image](https://user-images.githubusercontent.com/87371365/160737348-194bcba4-2b7e-4666-bed7-1857249378f9.png)
