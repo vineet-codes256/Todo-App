@@ -10,6 +10,8 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from .models import Task
 
@@ -21,6 +23,11 @@ class CustomLoginView(LoginView):
 
     def get_success_url(self):
         return reverse_lazy('tasks')
+    ## Show error if not authenticated
+    def form_invalid(self, form):
+        messages.error(self.request, 'Invalid username or password')
+        return super().form_invalid(form)
+
 
 class RegisterPage(FormView):
     template_name = 'base/register.html'
